@@ -2,6 +2,7 @@
     --background-color: RGB(102,212,207);
     --calculator-bg-color: #000;
     --default-button-color: #333333;
+    --default-button-hover-color: #fff;
     --util-bg-color: #a5a5a5;
     --operations-bg-color: #f1a43c;
 }
@@ -66,4 +67,16 @@ body{
 .all-buttons > button{
     border-radius: 100%;
     border: 0px;
+}
+
+button.active {
+    box-shadow:inset 0px 0px 0px .75px #fff;
+    transform: scale(1.01);
+}
+
+button:hover {
+    /* filter: drop-shadow(0px 0px .5px var(--default-button-hover-color)); */
+    /* border: 1px solid #fff; */
+    box-shadow:inset 0px 0px 0px .75px #fff;
+    transform: scale(1.01);
 }

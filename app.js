@@ -67,14 +67,18 @@ class Calculator {
         
         operationButtons.forEach(button => {
             button.addEventListener('click', () => {
-            calculator.updateDisplay();
-            calculator.setCurrentOperation(button.value);
+                calculator.updateDisplay();
+                calculator.setCurrentOperation(button.value);
+
+                document.querySelector('button.active') ? document.querySelector('button.active').classList.toggle('active') : false;
+                button.classList.toggle('active');
             })
         });
         
         equalsButton.addEventListener('click', button => {
             calculator.compute();
             calculator.updateDisplay();
+            document.querySelector('button.active') ? document.querySelector('button.active').classList.toggle('active') : false;
         });
         
         immediateOperationButtons.forEach(button => {
@@ -88,6 +92,7 @@ class Calculator {
         allClearButton.addEventListener('click', button => {
             calculator.clear();
             calculator.updateDisplay();
+            document.querySelector('button.active') ? document.querySelector('button.active').classList.toggle('active') : false;
         });
     }
 }
