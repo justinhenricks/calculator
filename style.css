@@ -1,0 +1,69 @@
+:root {
+    --background-color: RGB(102,212,207);
+    --calculator-bg-color: #000;
+    --default-button-color: #333333;
+    --util-bg-color: #a5a5a5;
+    --operations-bg-color: #f1a43c;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    width: 300px;
+    height: 500px;
+    background-color: var(--calculator-bg-color);
+    filter: drop-shadow(0px 0px 40px var(--calculator-bg-color));
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: [row1-start] 25% [row1-end row2-start] 75% [row2-end];
+}
+
+.display{
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 8px 24px;
+    font-size: 36px;
+}
+
+.all-buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr [col-start]);
+    grid-template-rows: [row-start] auto;
+    gap: 10px 10px;
+    padding: 10px;
+}
+
+.all-buttons button{
+    background-color: var(--default-button-color);
+    color: #fff;
+    font-size: 28px;
+}
+
+.util-button{
+    background-color: var(--util-bg-color)!important;
+    color: #000!important;
+}
+
+.operator-button{
+    background-color: var(--operations-bg-color)!important;
+}
+
+#digit-0{
+    grid-column: 1 / span 2;
+    border-radius: 30px 30px;
+}
+
+.all-buttons > button{
+    border-radius: 100%;
+    border: 0px;
+}
